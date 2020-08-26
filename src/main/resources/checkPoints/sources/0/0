@@ -1,0 +1,12 @@
+v1
+{"path":"file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir/1.csv","timestamp":1593291251000,"batchId":0}
+{"path":"file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir/2.csv","timestamp":1593291270000,"batchId":0}
+{"path":"file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir/3.csv","timestamp":1593291285000,"batchId":0}
+{"path":"file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir/4.csv","timestamp":1593291305000,"batchId":0}
+{"path":"file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir/9.csv","timestamp":1593291480000,"batchId":0}
+{"path":"file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir/8.csv","timestamp":1593291485000,"batchId":0}
+{"path":"file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir/7.csv","timestamp":1593291490000,"batchId":0}
+{"path":"file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir/6.csv","timestamp":1593291494000,"batchId":0}
+{"path":"file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir/0.csv","timestamp":1593291552000,"batchId":0}
+{"path":"file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir/5.csv","timestamp":1593523993000,"batchId":0}
+{"path":"file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir/10.csv","timestamp":1593524617000,"batchId":0}
