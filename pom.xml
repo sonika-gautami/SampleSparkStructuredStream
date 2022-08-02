@@ -12,13 +12,13 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <scala.compat.version>2.11</scala.compat.version>
-        <scala.version.major>2.11</scala.version.major>
+        <scala.compat.version>2.12</scala.compat.version>
+        <scala.version.major>2.12</scala.version.major>
         <scala.version.minor>8</scala.version.minor>
         <scala.version>${scala.version.major}.${scala.version.minor}</scala.version>
-        <pg.version>42.2.12</pg.version>
         <scalatest.version>3.0.5</scalatest.version>
         <spark.testing.version>2.1.0_0.6.0</spark.testing.version>
+        <spark.version>3.3.0</spark.version>
     </properties>
 
     <dependencies>
@@ -26,20 +26,20 @@
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-sql_${scala.version.major}</artifactId>
-            <version>2.4.5</version>
-            <scope>provided</scope>
+            <version>${spark.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.spark</groupId>
             <artifactId>spark-streaming_${scala.version.major}</artifactId>
-            <version>2.4.5</version>
-            <scope>provided</scope>
+            <version>${spark.version}</version>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.scala-lang</groupId>
             <artifactId>scala-library</artifactId>
             <version>${scala.version}</version>
-            <scope>provided</scope>
+            <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
