@@ -1,0 +1,95 @@
+---------------------------------
+---------------------------------
+// scala 2.10
+---------------------------------
+//
+$ scalac -Xprint:parse Main.scala
+This command provides some initial output about how the Scala compiler translates
+the for loops into other code.
+
+$ scalac -Xprint:all Main.scala
+you’ll see that the code is further translated into.
+
+//
+class fields declarations in primary constructors (Auto Getter/Setter generated):
+------------------------------------------------------------------
+Visibility          Accessor?    Mutator?
+------------------------------------------------------------------
+------------------------------------------------------------------
+var                 Yes         Yes
+------------------------------------------------------------------
+val                 Yes         No
+Default (for case-class)
+------------------------------------------------------------------
+no var or val       No          No
+Default (for class)
+------------------------------------------------------------------
+private          No          No
+(Adding the private keyword to var or val)
+------------------------------------------------------------------
+
+
+//
+abstract field (val/var) in abstarct class or trait =>
+    scala compiler doesn't add the field; Instead it only adds Getter/Setter of the field
+    This is why,
+    abstract field in abstract class or trait are defined with `def`
+    And implementing class overrides it with val/var (without mentioning override keyword)
+
+To prevent a concrete val field in an abstract base class
+    from being overridden in a subclass,
+    declare the field as a final val:
+
+//
+private[this]   => only to current object
+private         => only to same class
+protected       => same class + its sub-classes
+private[com.guavus] => all members of com.guavus package (package-private)
+default = public
+
+//
+Traversable ->
+    Iterable ->
+        Seq | Set | Map ->
+            Seq -> IndexedSeq | LinearSeq | Buffer
+
+IndexedSeq + Buffer ->
+                ArrayBuffer
+
+Buffer ->
+    ListBuffer
+
+IndexedSeq -> (default - Vector)
+    Array | Range | Vector | String | StringBuilder
+
+LinearSeq -> (default - List)
+    List | Queue | Stack | LinkedList | MutableList | Stream | DoubleLinkedList
+
+Map -> (default - HashMap)
+    HashMap | LinkedHashMap | WeakHashMap | SortedMap | TreeMap | ListMap
+
+Set ->
+    HashSet | SortedSet | TreeSet | ListSet | BitSet
+
+//im-mutable
+head - tail             -> List
+LIFO                    -> Stack
+FIFO                    -> Queue
+Lazy & Persistant
+(large or infinite)     -> Stream
+
+//mutable
+appending                       -> ArrayBuffer
+ArrayBuffer backed-by List      -> ListBuffer
+LIFO (when need performace)     -> ArrayStack
+
+SynchronizedMap -> for thread safe
+SynchronizedSet -> for thread safe
+
+//
+streams -> lazy
+other collections -> strict; to make them lazy -> apply .view method
+(other collections).view -> lazy; to make them strict -> apply .force
+(other collections).view.force -> strict
+
+// scala 2.13

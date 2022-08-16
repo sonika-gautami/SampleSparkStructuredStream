@@ -5,6 +5,7 @@ import java.nio.file.Paths
 
 object Sql extends App {
 
+  val s : String = ""
   val seq = Seq("one", "two", "three", "four").map(s => (s, s.length))
 
   val spark = SparkSession.builder()
