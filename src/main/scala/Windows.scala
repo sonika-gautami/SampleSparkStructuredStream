@@ -72,6 +72,12 @@ object Windows extends App {
     .select("per_rank", "country", "comment_count")
     .show(200)
 
+  dfIn.withColumn("row_number", rank() over(
+    Window.partitionBy("id").orderBy("id")
+  )).where("row_number == 1")
+    .selectExpr("*")
+    .show()
+
   /*
   lag -> the value prior to offset rows from DataFrame.
         For example,
@@ -134,6 +140,7 @@ object Windows extends App {
     .select("view_count", "col1", "categoryId")
     .orderBy('categoryId, 'view_count)
     .show(50)
+
 
 
 }

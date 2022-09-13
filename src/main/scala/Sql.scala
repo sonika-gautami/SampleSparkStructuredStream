@@ -1,11 +1,12 @@
 import org.apache.spark.sql.{SaveMode, SparkSession}
+import org.apache.spark.sql.types.{IntegerType, StructField, StructType}
 import org.apache.spark.storage.StorageLevel
 
 import java.nio.file.Paths
 
 object Sql extends App {
 
-  val s : String = ""
+  val s: String = ""
   val seq = Seq("one", "two", "three", "four").map(s => (s, s.length))
 
   val spark = SparkSession.builder()
@@ -13,7 +14,25 @@ object Sql extends App {
     .appName("TestDs")
     .getOrCreate()
 
-  import spark.sqlContext.implicits._
+  spark.sql(
+    """
+      |
+      |""".stripMargin)
+    .where("rank == 1")
+
+  import spark.implicits._
+  spark.read
+    .option("sep", ",")
+    .option("header", "true")
+    .option("header", "true")
+    .option("inferSchema", "true")
+    .text("")
+    .flatMap(_.getString(1).split(" "))
+    .count()
+
+  spark.read.textFile("")
+    .flatMap(_.split(","))
+    .count()
 
   val df = spark.sparkContext.parallelize(seq).toDF("str", "value")
   df.printSchema()

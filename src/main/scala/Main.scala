@@ -6,11 +6,11 @@ import org.apache.spark.sql.types.{LongType, StringType, StructField, StructType
 
 object Main extends App {
 
-  val inputDir = "file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/inputDir"
+  val inputDir = "file:///Users/sonikagautami/My_NonBackup/GITHUB/SampleSparkStructuredStream/src/main/resources/inputDir"
 
-  val checkPointDir = "file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/checkPoints"
+  val checkPointDir = "file:///Users/sonikagautami/My_NonBackup/GITHUB/SampleSparkStructuredStream/src/main/resources/checkPoints"
 
-  val outputDir = "file:///Users/sonikagautami/Learnings/SampleSparkStructured/src/main/resources/outputDir"
+  val outputDir = "file:///Users/sonikagautami/My_NonBackup/GITHUB/SampleSparkStructured/src/main/resources/outputDir"
 
   import scala.concurrent.duration._
 
